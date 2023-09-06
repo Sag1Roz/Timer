@@ -9,12 +9,6 @@ let startTime
 renderToHtml()
 
 
-function start(){
-    startTime =  setInterval(up,1000);
-
-}
-
-
 
 function up(){
     if(sec === 59){
@@ -29,7 +23,17 @@ sec++
  renderToHtml()
 }
 
+function start(){
+    startTime =  setInterval(up,1000);
+}
 
+
+function stop(){
+    clearInterval(startTime)
+     renderToHtml()
+ }
+
+ 
 function restart(){
     sec=0
     minutes=0
@@ -38,10 +42,7 @@ function restart(){
    renderToHtml()
 }
 
-function stop(){
-   clearInterval(startTime)
-    renderToHtml()
-}
+
 
 
 function renderToHtml(){
