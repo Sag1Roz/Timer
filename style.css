@@ -1,0 +1,47 @@
+*,*::before,*::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+font-family: 'Libre Baskerville', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Overpass', sans-serif;
+}
+
+.mid{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container{
+    background-color: hotpink;
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.time{
+    font-size: 5.5rem;
+    color: wheat;
+}
+
+
+
+.container button{
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.2rem;
+    margin: 1rem 0 0 1.2rem;
+    cursor: pointer;
+    color:rgb(253, 239, 159);
+    background-color: cornflowerblue;
+    font-size: 1.2rem;
+    transition: all 300ms;
+}
+
+.container button:hover{
+    color: cornflowerblue;
+    background-color: rgb(253, 239, 159);
+}
