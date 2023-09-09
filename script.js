@@ -1,61 +1,35 @@
-const display = document.querySelector('#display')
-const div = document.createElement('div')
-let sec = 0
-let minutes = 0
-let hour = 0
-let startTime
+const buttonCalculator = document.querySelector("#button-calculator");
+let height = document.querySelector("#input-height");
+const weight = document.querySelector("#input-weight");
+const result = document.querySelector("#result");
+const restartButton = document.querySelector("#rest-btn");
 
-
-renderToHtml()
-
-
-
-function up(){
-    if(sec === 59){
-    if(minutes === 59){
-        hour++
-        minutes=0
-    }
-    sec=0
-    minutes++
-}
-sec++
- renderToHtml()
-}
-
-function start(){
-    startTime =  setInterval(up,1000);
+function calculator() {
+  if (!height.toString().includes(".")) {
+    height.value = height.value / 100;
+  }
+  if (weight.value === "" || height.value === "") {
+    weight.style.borderColor = "red";
+    height.style.borderColor = "red";
+    height.value = "";
+  } else {
+    const bmi = weight.value / Math.pow(height.value, 2);
+    const slice = bmi.toString().slice(0, 5);
+    result.textContent = `Your bmi is ${slice}`;
+    buttonCalculator.classList.add("hide");
+    result.classList.remove("hide");
+    restartButton.classList.remove("hide");
+    weight.style.borderColor = "#06114f";
+    height.style.borderColor = "#06114f";
+  }
 }
 
-
-function stop(){
-    clearInterval(startTime)
-     renderToHtml()
- }
-
- 
-function restart(){
-    sec=0
-    minutes=0
-    hour=0
-    stop()
-   renderToHtml()
-}
-
-
-
-
-function renderToHtml(){
-    div.innerHTML = `<div class="mid">
-<div class="container">
- <div class="time">${hour < 10 ? "0" + hour : hour}:${minutes < 10 ? "0" + minutes : minutes}:${sec < 10 ? "0" + sec : sec}</div>
- <div class="buttes">
- <button onclick="stop()">Stop</button>
- <button onclick="start()">Start</button>
- <button  onclick="restart()">Restart</button>
- </div>
-</div>
-</div>`
-
-display.appendChild(div)
+function restart() {
+  weight.value = "";
+  height.value = "";
+  buttonCalculator.classList.remove("hide");
+  result.classList.add("hide");
+  restartButton.classList.add("hide");
+  weight.style.borderColor = "#06114f";
+  height.style.borderColor = "#06114f";
 }

@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" charset="UTF-8" defer></script>
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans:ital,wght@1,500&family=Overpass:ital@1&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="display"></div>
-  
- <script src="script.js" charset="UTF-8"></script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans:ital,wght@1,500&family=Overpass:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <h1>Bmi calculator</h1>
+        <div class="bmi-input">
+          <input id="input-height" type="text" />
+          <label>Height</label>
+          <input id="input-weight" type="text" />
+          <label>Weight</label>
+        </div>
+        <div class="calculator-button" id="display">
+          <button onclick="calculator()" id="button-calculator">
+            Calculator
+          </button>
+          <div id="result" class="result hide">Your bmi is: 23.38</div>
+          <button onclick="restart()" id="rest-btn" class="rest-btn hide">
+            Restart
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
